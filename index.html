@@ -204,7 +204,7 @@
           ><span class="address-i-hc-container1"
             ><p class="m-nhc-l">Đặt bàn truyền thống cho chương trình</p>
             <p class="m-nhc-l">
-              và nhà tài trợ tại sảnh H3 trường Đại học Xây dựng Hà Nội.
+              và NTT tại sảnh H3 trường Đại học Xây dựng Hà Nội.
             </p></span
           ></i
         ><i class="khai-mc-live-container"
@@ -258,19 +258,19 @@
         <div class="group-parent">
           <div class="group-div">
             <div class="group-item"></div>
-            <div class="div6">9</div>
+            <div class="div6" id="days"></div>
           </div>
           <div class="rectangle-parent1">
             <div class="group-item"></div>
-            <div class="div6">9</div>
+            <div class="div6" id="hours"></div>
           </div>
           <div class="rectangle-parent2">
             <div class="group-item"></div>
-            <div class="div6">9</div>
+            <div class="div6" id="minutes"></div>
           </div>
           <div class="rectangle-parent3">
             <div class="group-item"></div>
-            <div class="div6">9</div>
+            <div class="div6" id="seconds"></div>
           </div>
         </div>
         <img class="group-child3" alt="" src="./public/group-3402.svg" /><img
@@ -287,6 +287,27 @@
     </div>
 
     <script>
+      const countDownDate = new Date("2023-04-15T20:00:00Z").getTime();
+      const countdownEl = document.getElementById("countdown");
+
+      let x = setInterval(function () {
+        const now = new Date().getTime();
+
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+      }, 1000);
+
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function () {
