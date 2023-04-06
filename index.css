@@ -10,8 +10,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 1920px;
-  height: 990px;
+  width: 100%;
+  height: 100%;
 }
 .fi-rr-arrow-right-icon {
   position: absolute;
@@ -805,4 +805,10 @@
   font-size: var(--font-size-xl);
   color: var(--primary-contrast);
   font-family: var(--font-rubik);
+}
+#my-element {
+  overflow-x: auto;
+}
+#my-element::-webkit-scrollbar-thumb {
+  background-color: blue;
 }
